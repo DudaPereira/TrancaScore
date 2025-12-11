@@ -1,0 +1,104 @@
+<div class="h-screen w-full p-6 max-w mx-auto">
+  <mat-icon
+    class="flex justify-start text-green-900 w-10 h-10"
+    routerLink="/home"
+    >arrow_circle_left</mat-icon
+  >
+
+  <h2 class="flex justify-center text-3xl text-[#234F36] mb-6">Nova Partida</h2>
+
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <div>
+      <label class="block mb-1 text-sm text-[#2D3B32]">Jogador 1</label>
+      <select
+        [(ngModel)]="p1"
+        class="w-full rounded-lg p-3 bg-[#FFFDF9] border"
+      >
+        <option value="">selecione</option>
+        <option *ngFor="let pl of players" [value]="pl.nome">
+          {{ pl.nome }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label class="block mb-1 text-sm text-[#2D3B32]">Jogador 2</label>
+      <select
+        [(ngModel)]="p2"
+        class="w-full rounded-lg p-3 bg-[#FFFDF9] border"
+      >
+        <option value="">selecione</option>
+        <option *ngFor="let pl of players" [value]="pl.nome">
+          {{ pl.nome }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block mb-1 text-sm text-[#2D3B32]">Jogador 3</label>
+      <select
+        [(ngModel)]="p3"
+        class="w-full rounded-lg p-3 bg-[#FFFDF9] border"
+      >
+        <option value="">selecione</option>
+        <option *ngFor="let pl of players" [value]="pl.nome">
+          {{ pl.nome }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label class="block mb-1 text-sm text-[#2D3B32]">Jogador 4</label>
+      <select
+        [(ngModel)]="p4"
+        class="w-full rounded-lg p-3 bg-[#FFFDF9] border"
+      >
+        <option value="">selecione</option>
+        <option *ngFor="let pl of players" [value]="pl.nome">
+          {{ pl.nome }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="flex gap-4 mb-6">
+    <button
+      (click)="vitorias = 1"
+      [class.opacity-60]="vitorias !== 1"
+      class="flex-1 py-3 rounded-lg"
+      [ngClass]="{
+        'bg-[#A6C9A1]': vitorias === 1,
+        'bg-[#EDEDED]': vitorias !== 1
+      }"
+    >
+      Time 1 venceu
+    </button>
+    <button
+      (click)="vitorias = 2"
+      [class.opacity-60]="vitorias !== 2"
+      class="flex-1 py-3 rounded-lg"
+      [ngClass]="{
+        'bg-[#A6C9A1]': vitorias === 2,
+        'bg-[#EDEDED]': vitorias !== 2
+      }"
+    >
+      Time 2 venceu
+    </button>
+  </div>
+
+  <button
+    (click)="save()"
+    class="w-full py-4 rounded-lg bg-[#234F36] text-white font-bold"
+  >
+    Salvar
+  </button>
+  <div
+    class="fixed bottom-0 left-0 right-0 bg-white py-2"
+    style="
+      background-image: url('rodape.png');
+      background-repeat: repeat-x;
+      background-size: auto 70px;
+      background-position: center;
+    "
+  >
+    <div class="h-16"></div>
+  </div>
+</div>

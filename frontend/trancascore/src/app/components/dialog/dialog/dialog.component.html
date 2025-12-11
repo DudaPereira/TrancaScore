@@ -1,0 +1,23 @@
+ <div class="p-6">
+      <h2 mat-dialog-title class="text-xl font-semibold mb-4" 
+          [ngClass]="{
+            'text-green-600': data.type === 'success',
+            'text-red-600': data.type === 'error',
+            'text-yellow-600': data.type === 'warning',
+            'text-gray-800': !data.type
+          }">
+        {{ data.title || 'Aviso' }}
+      </h2>
+      <mat-dialog-content>
+        <p class="text-gray-700">{{ data.message }}</p>
+      </mat-dialog-content>
+      <mat-dialog-actions class="flex justify-end mt-4">
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="close()"
+          class="bg-[#234F36] text-white px-6 py-2 rounded-lg">
+          OK
+        </button>
+      </mat-dialog-actions>
+    </div>

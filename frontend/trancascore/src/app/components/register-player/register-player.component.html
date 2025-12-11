@@ -1,0 +1,44 @@
+<div class="h-screen w-full p-6 max-w mx-auto">
+  <mat-icon
+    class="flex justify-start text-green-900 w-10 h-10"
+    routerLink="/home"
+    >arrow_circle_left</mat-icon
+  >
+  <h2 class="flex justify-center text-3xl text-[#234F36] mb-6">
+    Cadastrar Jogador
+  </h2>
+  <div class="flex gap-4 mb-4">
+    <input
+      [(ngModel)]="nome"
+      placeholder="Nome do jogador"
+      class="flex-1 rounded-lg p-4 border border-[#EDE6DF] bg-[#FFFDF9]"
+    />
+    <button
+      (click)="add()"
+      class="bg-[#234F36] text-white px-5 py-3 rounded-lg"
+    >
+      Adicionar
+    </button>
+  </div>
+
+  <ul class="space-y-3">
+    <li
+      *ngFor="let p of players"
+      class="flex justify-between items-center bg-[#FFFDF9] p-4 rounded-lg shadow-md"
+    >
+      <span class="text-[#2D3B32]">{{ p.nome }}</span>
+      <mat-icon (click)="remove(p.id)" class="text-[#E27D75]">close</mat-icon>
+    </li>
+  </ul>
+  <div
+    class="fixed bottom-0 left-0 right-0 bg-white py-2"
+    style="
+      background-image: url('rodape.png');
+      background-repeat: repeat-x;
+      background-size: auto 70px;
+      background-position: center;
+    "
+  >
+    <div class="h-16"></div>
+  </div>
+</div>
