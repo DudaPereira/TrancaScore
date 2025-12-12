@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'trancascore-production.up.railway.app'
+  apiUrl: 'https://trancascore-production.up.railway.app'
 };
