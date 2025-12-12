@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOriginPatterns(
                         "http://localhost:4200",
-                        "https://trancascore-gxp7ilqdz-maria-eduarda-pereiras-projects.vercel.app"
+                        "https://trancascore-app.vercel.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
