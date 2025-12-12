@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jogadores")
-@CrossOrigin(origins = "*")
 public class JogadorController {
     private final JogadorService jogadorService;
 
